@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- Algorithme qui permet de lire une phrase, compter les voyelles et s'arreter a la fin -->
+<script>
+
+        function lirePhrase(phrase){
+            // initialisation
+            let charCount = 0;
+            let motCount = 0;
+            let voyelleCount = 0;
+
+            //Introduction des voyelles
+            const voyelle = ['a','e','i','u','o','y','A','E','I','U','O','Y'];
+
+            // Boucle pour parcourir toute la phrase 
+            for(i=0; i<phrase.length; i++){
+                
+                let char = phrase[i];
+
+                //Arret au niveau du '.' (dernier caractere)
+                if (char == '.'){
+                    break;
+                }
+
+                //comptage de caractere
+                charCount++;
+
+                //Verification de voyelles
+                if(voyelle.includes(char)){
+                    voyelleCount++;
+                }
+                //comptage en tenant compte de l'espace
+                if(char == ' ' &&  i>0 && phrase[i-1] !== ' '){
+                    motCount++;
+                }
+            }
+            motCount++;
+
+            //Affichage du resultat
+            console.log("le nombre total de caractere est: ", + charCount);
+            console.log("le nombre de mot est: ", + motCount);
+            console.log("le nombre de voyelle utilisé  est: ", + voyelleCount);
+        }
+
+        let phrase = "je suis une etudiande a gomycode et j'habite dakar."
+        lirePhrase(phrase);
+
+</script>
+    
+</body>
+</html>
