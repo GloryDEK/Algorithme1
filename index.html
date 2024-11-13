@@ -7,8 +7,8 @@
 </head>
 <body>
 
-    <!-- Algorithme qui permet de lire une phrase, compter les voyelles et s'arreter a la fin -->
 <script>
+    <!-- Algorithme qui permet de lire une phrase, compter les voyelles et s'arreter a la fin -->
 
         function lirePhrase(phrase){
             // initialisation
@@ -18,18 +18,11 @@
 
             //Introduction des voyelles
             const voyelle = ['a','e','i','u','o','y','A','E','I','U','O','Y'];
-
-            // Boucle pour parcourir toute la phrase 
             for(i=0; i<phrase.length; i++){
-                
                 let char = phrase[i];
-
-                //Arret au niveau du '.' (dernier caractere)
                 if (char == '.'){
                     break;
                 }
-
-                //comptage de caractere
                 charCount++;
 
                 //Verification de voyelles
@@ -42,8 +35,7 @@
                 }
             }
             motCount++;
-
-            //Affichage du resultat
+            
             console.log("le nombre total de caractere est: ", + charCount);
             console.log("le nombre de mot est: ", + motCount);
             console.log("le nombre de voyelle utilisé  est: ", + voyelleCount);
